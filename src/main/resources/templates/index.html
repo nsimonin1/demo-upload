@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello-upload-POC</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script th:src="@{/js/index.js}"></script>
+</head>
+<body>
+<h1>SpringMVC - File Upload with/without Ajax</h1>
+
+<!--  Form 1 -->
+<i>Uploading File Without Ajax</i><br/>
+<form id="form1" method="post" th:action="@{/count/upload}" enctype="multipart/form-data">
+
+    <!-- File input -->
+    <input name="file" id="file" type="file"/><br/>
+
+    <input type="submit" value="Upload"/>
+</form>
+<hr/>
+<!--  Form 2 -->
+<i>Uploading File With Ajax</i><br/>
+<form id="form2" method="post" th:action="@{/count/upload}" enctype="multipart/form-data">
+    <!-- File input -->
+    <input name="file2" id="file2" type="file"/><br/>
+</form>
+
+<button value="Submit" onclick="uploadJqueryForm()">Upload</button>
+<i>Using JQuery Form Plugin</i><br/>
+<button value="Submit" onclick="uploadFormData()">Upload</button>
+<i>Using FormData Object</i>
+
+<div id="result"></div>
+
+</body>
+</html>
